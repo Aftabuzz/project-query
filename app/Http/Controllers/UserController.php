@@ -54,18 +54,25 @@ class UserController extends Controller
     public function adduser(){
 
       $user =DB::table('users')
-                      ->insert([
+                      ->insertOrIgnore([                     //insert code
+
+                        //->upsert([                         //update code
                           'name' => 'Ariyan',
                           'email' => 'ariyan@gmail.com',
-                          'age' => 14,
-                          'city' => 'Dhaka',
+                          'age' => 15,
+                          'city' => 'CTG',
                           'created_at' => now(),
                           'updated_at' => now()
 
-                      ]);
+                      ],
+                     ['email']                                //update code
+                    );
                   if($user){
                      echo"<h2>Data inserted successfully.</h2>";
 
-                  }    
+                  }    else{
+                        echo "<h2>Data not added</h2>";
+
+                  }
     }
 }
