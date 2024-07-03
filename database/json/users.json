@@ -1,0 +1,25 @@
+[
+    {
+        "name" : "Aftab",
+        "email" :  "aftab@gmail.com",
+        "age" : "20",
+        "city" : "Dhaka"
+    },
+    
+      {
+       "name" :"Mahin",
+       "email" : "mahin@gmail.com",
+       "age" : "18",
+        "city" : "CTG"
+      },
+
+      {
+        "name" : "zaman",
+        "email" : "zaman@gmail.com",
+        "age" : "18",
+        "city" : "Sylhet"
+
+      }
+
+
+]
