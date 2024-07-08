@@ -14,3 +14,7 @@ Route::get('/', [UserController::class, 'showUsers']);
 Route::get('/user/{id}', [UserController::class, 'singleUser'])->name('view.user');         //view users
 
 Route::get('/add', [UserController::class, 'addUser']);
+
+Route::get('/update', [UserController::class, 'updateUser']);
+
+Route::get('/delete/{id}', [UserController::class, 'deleteUser']);

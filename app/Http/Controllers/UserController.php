@@ -77,5 +77,134 @@ class UserController extends Controller
                   //               echo "<h2>Data not added</h2>";         //incase duplicate value
 
                   // }
+                 
     }
+    // public function updateUser(){
+    //   $user =DB::table('users')
+    //   ->where('id',2)
+    //   ->update([
+    //      'city' => 'Sydny',
+    //      'age' => 20
+  //      ]);
+
+
+    // public function updateUser(){
+    //   $user =DB::table('users')
+    //            ->updateOrinsert(                               //condition update
+    //            [
+    //             'email' => 'aftab@gmail.com',
+    //             'name' => 'Aftab'
+    //            ],
+
+    //            [
+    //             'age' => 20
+    //            ]
+
+    //               );
+
+      
+    //   if($user){
+    //                echo"<h2>Data updated successfully.</h2>";
+
+    //               }    else{
+    //                   echo "<h2>Data not updated</h2>";        
+
+    //     }
+
+    //   }
+
+
+      // public function updateUser(){
+      //   $user =DB::table('users')
+      //            ->updateOrinsert(                //update new data after cheking exit or not                         
+      //            [
+      //             'email' => 'axyz@gmail.com',
+      //             'name' => 'xyz',
+      //             'city' => 'hawaii'
+      //            ],
+  
+      //            [
+      //             'age' => 21
+      //            ]
+  
+      //               );
+  
+        
+      //   if($user){
+      //                echo"<h2>Data updated successfully.</h2>";
+  
+      //               }    else{
+      //                   echo "<h2>Data not updated</h2>";        
+  
+      //     }
+
+
+        //   public function updateUser(){                   //increment/decrement age every visit
+        //     $user =DB::table('users')
+        //              ->where('id', 3)
+        //              ->increment('age');
+        //              //->increment('age', 3);
+        //              //->decrement('age');
+               
+      
+            
+        //     if($user){
+        //                  echo"<h2>Data updated successfully.</h2>";
+      
+        //                 }    else{
+        //                     echo "<h2>Data not updated</h2>";        
+      
+        //       }
+      
+  
+        // }
+
+
+        // public function updateUser(){                   
+        //   $user =DB::table('users')
+        //            ->where('id', 3)
+                   
+        //            ->increment('age', 3, ['city' => 'New York']);
+                
+             
+    
+          
+        //   if($user){
+        //                echo"<h2>Data updated successfully.</h2>";
+    
+        //               }    else{
+        //                   echo "<h2>Data not updated</h2>";        
+    
+        //     }
+    
+            public function updateUser(){          //increate multiple column                                   
+              $user =DB::table('users')
+                       ->where('id', 3)
+                       
+                       ->incrementEach([
+                           'age' => 2,
+                           'votes' => 1
+
+                       ]);
+ 
+              if($user){
+                           echo"<h2>Data updated successfully.</h2>";
+        
+                          }    else{
+                              echo "<h2>Data not updated</h2>";        
+        
+                }
+
+
+      }
+
+      public function deleteUser(string $id){
+        $user =DB::table('users')
+        ->where('id', 3)
+        ->delete();
+      } 
+
+
+
+
 }
