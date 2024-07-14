@@ -13,15 +13,25 @@
             <div class="row">
                 <div class="col-6"></div>
                 <h1>All Users</h1>
+
+                
+                    <a href=""class="btn btn-success btn-sm mb-3">Add New</a> 
+
+               
+
                 <table class="table table-bodered table-striped">
-                    
+                   
                     <tr>
+                    
                         <th>Id</th>
                         <th>Name</th>
                         <th>Email</th>
                         <th>Age</th>
                         <th>City</th>
                         <th>View</th>
+                        <th>Delete</th>
+                        <th>update</th>
+                       
                     </tr>
                     @foreach ($data as $id => $user)
                     <tr>
@@ -30,7 +40,9 @@
                         <td>{{$user->email}}</td>
                         <td>{{$user->age}}</td>
                         <td>{{$user->city}}</td> 
-                        <td><a href="{{route('view.user', $user->id)}}"class="btn btn-primary btn-sm">View</a></td>                       
+                        <td><a href="{{route('view.user', $user->id)}}"class="btn btn-primary btn-sm">View</a></td> 
+                        <td><a href="{{route('delete.user', $user->id)}}"class="btn btn-danger btn-sm">Delete</a></td> 
+                            <td><a href=""class="btn btn-success btn-sm mb-3">Update</a></td>                
                     </tr>
                     @endforeach
                 </table>

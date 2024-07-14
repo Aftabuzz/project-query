@@ -58,8 +58,8 @@ class UserController extends Controller
                         ->insertGetId([
 
                         //->upsert([                         //update code
-                          'name' => 'Raian',
-                          'email' => 'raian@gmail.com',
+                          'name' => 'ariyan',
+                          'email' => 'ariyan@gmail.com',
                           'age' => 7,
                           'city' => 'NRD',
                           'created_at' => now(),
@@ -183,7 +183,7 @@ class UserController extends Controller
                        
                        ->incrementEach([
                            'age' => 2,
-                           'votes' => 1
+                         //  'votes' => 1
 
                        ]);
  
@@ -200,9 +200,21 @@ class UserController extends Controller
 
       public function deleteUser(string $id){
         $user =DB::table('users')
-        ->where('id', 3)
+        ->where('id', $id)
         ->delete();
+         
+        if($user){
+            return redirect()->route('home');
+
+        }
+
       } 
+
+      public function deleteAllUser(){
+
+        $user = DB::table('users')
+                   ->truncate();
+      }
 
 
 
