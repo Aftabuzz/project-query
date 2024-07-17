@@ -31,7 +31,10 @@ class UserController extends Controller
          
         //->where('name','like','A%')
 
-   ->get();
+   //->get();
+   ->orderBy('name')
+   //->simplePaginate(4);        //for pazination 1 
+   ->Paginate(4);               //  for pazination 2
 
         //$users = DB::table('users')->where('id',2)->get();
 

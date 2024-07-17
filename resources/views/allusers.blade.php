@@ -46,6 +46,10 @@
                     </tr>
                     @endforeach
                 </table>
+                <div class= "mt=5">                                            
+                         {{-- {{$data->links()}}          --}} {{-- for pazination 1 --}} 
+                         {{$data->links('pagination::bootstrap-5')}} {{-- for pazination 2 --}} 
+                </div>
             </div>
           </div>
     </body>
